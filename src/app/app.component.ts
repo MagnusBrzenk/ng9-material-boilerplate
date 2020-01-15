@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng9-boilerplate';
+
+  _openSidenav() {
+    console.log('Do sth');
+  }
 }

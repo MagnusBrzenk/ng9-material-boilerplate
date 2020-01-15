@@ -1,0 +1,30 @@
+<mat-nav-list>
+  <mat-list-item>
+    <mat-icon mat-list-icon>
+      home
+    </mat-icon>
+    <span routerLink>Home</span>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon mat-list-icon>
+      info
+    </mat-icon>
+    <span routerLink="about">About</span>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon mat-list-icon>
+      mail
+    </mat-icon>
+    <span routerLink="contact">Contact</span>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon mat-list-icon style="transform: translate(-2px,-3px);">
+      <fa-icon [icon]="faCog" [fixedWidth]="true"></fa-icon>
+    </mat-icon>
+
+    <span routerLink="settings">Settings</span>
+  </mat-list-item>
+</mat-nav-list>

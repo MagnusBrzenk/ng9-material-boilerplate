@@ -1,0 +1,43 @@
+@import '../styles-variables';
+
+mat-sidenav-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
+  mat-sidenav {
+    min-width: 150px;
+  }
+
+  mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: yellow;
+
+    /**
+      The following three '-wrapper' divs combine with mat-sidenav-content and its flex-direction-column setting to generate a sticky footer effect. This pattern is taken from [here](https://github.com/CanKattwinkel/material-2-sticky-footer-mat-sidenav)
+    **/
+
+    .header-wrapper {
+      //
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      height: $header-height;
+      background-color: red;
+    }
+    .routed-page-wrapper {
+      margin-top: $header-height;
+      background-color: pink;
+      width: 100%;
+      flex: 1; // child will set to an equal size inside the container
+      padding: 20px 30px;
+      // padding-top: $header-height;
+    }
+    .footer-wrapper {
+      background-color: orange;
+    }
+  }
+}
