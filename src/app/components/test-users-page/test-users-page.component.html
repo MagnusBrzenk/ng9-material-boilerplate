@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Users Grid</h1>
+  <h3>Using Bootstrap Responsive Grid</h3>
+
+  <div *ngFor="let user of users; let i = index">
+    <span *ngIf="i % 2 === 0">
+      <div class="row grid-row">
+        <div class="col-sm-6">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>
+                {{ users[i].name }}
+              </mat-card-title>
+              <mat-card-subtitle>{{ users[i].username }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col-sm-6">
+          <mat-card class="example-card" *ngIf="!!users[i + 1]">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title> {{ users[i + 1].name }}</mat-card-title>
+              <mat-card-subtitle>{{ users[i + 1].username }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>

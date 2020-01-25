@@ -14,6 +14,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 import { TestPageComponent } from './components/test-page/test-page.component';
+import { TestUsersPageComponent } from './components/test-users-page/test-users-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TestPageComponent } from './components/test-page/test-page.component';
     AboutPageComponent,
     ContactPageComponent,
     SettingsPageComponent,
-    TestPageComponent
+    TestPageComponent,
+    TestUsersPageComponent
   ],
   imports: [
     BrowserModule,

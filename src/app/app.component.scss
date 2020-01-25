@@ -25,6 +25,7 @@ mat-sidenav-container {
       top: 0px;
       left: 0px;
       right: 0px;
+      z-index: 10;
       height: $header-height;
       background-color: red;
     }
