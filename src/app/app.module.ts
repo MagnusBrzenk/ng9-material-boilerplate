@@ -15,6 +15,8 @@ import { ContactPageComponent } from './components/contact-page/contact-page.com
 import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 import { TestPageComponent } from './components/test-page/test-page.component';
 import { TestUsersPageComponent } from './components/test-users-page/test-users-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { TestUsersPageComponent } from './components/test-users-page/test-users-
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
