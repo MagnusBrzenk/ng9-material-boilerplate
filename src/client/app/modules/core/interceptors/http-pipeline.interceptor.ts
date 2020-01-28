@@ -10,7 +10,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { timeout, map, catchError } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';
-import { apiDefaultTimeoutMs } from 'src/app/utils/constants';
+import { apiDefaultTimeoutMs } from 'src/client/app/utils/constants';
 
 @Injectable()
 export class PipelineInterceptor implements HttpInterceptor {

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IUser } from 'src/app/models/user.model';
-import { apiDefaultTimeoutMs } from 'src/app/utils/constants';
+import { IUser } from 'src/client/app/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +15,5 @@ export class TestDataService {
 
   getUsers(userId?: string): Observable<IUser[] | IUser> {
     return this.http.get<IUser>(`${this.apiUrl}/users/${userId}`);
-
-    // if (!!userId) {
-    //   return this.http.get<IUser>(`${this.apiUrl}/users/${userId}`);
-    // } else {
-    //   return this.http.get<IUser[]>(`${this.apiUrl}/users`, {
-    //     headers: new HttpHeaders({ timeout: `${apiDefaultTimeoutMs}` })
-    //   });
-    // }
   }
 }

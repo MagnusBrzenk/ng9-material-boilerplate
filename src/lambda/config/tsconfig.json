@@ -1,0 +1,21 @@
+{
+    // This config file is used by ts-loader when webpack builds bundle
+  "include": [
+    "../**/*"
+  ],
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "lib": [ "esnext" ],
+    "keyofStringsOnly": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "importHelpers": true,
+    "noErrorTruncation": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true
+  }
+}

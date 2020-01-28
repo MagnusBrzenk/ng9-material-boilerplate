@@ -1,0 +1,70 @@
+#! /bin/bash
+
+clear
+
+option=$1
+
+if [[ -z $option ]]; then
+  clear
+  echo """
+    ============================================================
+    LAMBDA FUNCTION MANAGER
+
+    CHOOSE ONE OF THE FOLLOWING OPTIONS
+    (N.b. numbers can be passed directly to script as argument)
+
+    1. Build and zip lambda function
+    2. Examine build with webpack-bundle-analyzer
+
+    ============================================================
+"""
+  read choice
+  option=$choice
+fi
+
+function build_lambda() {
+  # Refresh dist-dir
+  rm -rf dist-lambda
+  mkdir dist-lambda
+  # Build bundle with webpack
+  TS_NODE_PROJECT='src/lambda/config/tsconfig.webpack.json' \
+    ./node_modules/.bin/webpack \
+    --mode production \
+    --progress \
+    --color \
+    --config src/lambda/config/webpack.config.ts \
+    --json >dist-lambda/compilation-stats.json
+  # Add handler to wrap lambda code
+
+  echo "
+  const lambda = require('./lambda');
+  exports.handler = function(event, context, callback) {
+    lambda.handler(event, context, callback);
+  };
+  " >dist-lambda/exports.js
+
+}
+
+# Ensure chosen option is a number between 1 and 3
+if [[ $option =~ ^[0-9]+$ && $option -ge 1 && $option -le 3 ]]; then
+
+  if [[ $option -eq 1 ]]; then
+    echo ">>> Building Lambda-Function Bundle ..."
+    build_lambda
+    cd dist-lambda
+    zip exports.js.zip exports.js lambda.js
+    cd ..
+  fi
+
+  if [[ $option -eq 2 ]]; then
+    echo ">>> Analyzing Lambda Bundle ..."
+    ./node_modules/.bin/webpack-bundle-analyzer ./dist-lambda/compilation-stats.json
+  fi
+
+else
+
+  echo "Chosen option ("$option") was NOT a number between 1 and 3"
+
+fi
+
+# TS_NODE_PROJECT='src/lambda/config/tsconfig.webpack.json' ./node_modules/.bin/webpack  --config src/lambda/config/webpack.config.ts

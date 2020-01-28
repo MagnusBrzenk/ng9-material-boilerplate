@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# Get variable $invoke_url
+source _invoke_url_export
+
+# Test post route to lambda function!
+# This url must be obtained from 'invoke' url in the aws api-gateway console:
+# AWS Console > Amazon API GAteway > [Name of API; default is 'las'] > Stages > POST
+url=$invoke_url/contact
+
+curl \
+  -d '{"name":"Scrooge", "email":"ddarg@umd.edu" , "message":"Gooday mate!!!"}' \
+  -H "Content-Type: application/json" \
+  -X POST \
+  -k $url

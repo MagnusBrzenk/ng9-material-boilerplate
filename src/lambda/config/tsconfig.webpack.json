@@ -1,0 +1,8 @@
+{
+  // This config file is needed to configure tsc when running webpack
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "esModuleInterop": true,
+  }
+}

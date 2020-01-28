@@ -1,0 +1,5 @@
+#! /bin/bash
+
+# For some reason, need to specify region in env var or get weird error
+# From: https://github.com/terraform-providers/terraform-provider-aws/issues/9989#issuecomment-558389160
+AWS_DEFAULT_REGION='us-east-1' terraform destroy

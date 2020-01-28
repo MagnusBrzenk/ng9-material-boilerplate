@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IUser } from 'src/app/models/user.model';
-import { TestDataService } from 'src/app/modules/core/services/test-data.service';
+import { IUser } from 'src/client/app/models/user.model';
+import { TestDataService } from 'src/client/app/modules/core/services/test-data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

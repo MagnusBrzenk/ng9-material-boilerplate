@@ -1,0 +1,28 @@
+#! /bin/bash
+
+clear
+
+source .env
+
+function next_stage() {
+  echo -e """
+    =======================================
+    READY FOR NEXT STAGE: ${1}
+
+    \033[32mNow is a safe time to quit.\033[0m
+    \033[31mDo NOT quit while terraform is running!\033[0m
+
+    Press Enter to Continue
+    Press ctrl+c to Quit
+
+    =======================================
+"""
+  read
+  clear
+}
+
+next_stage "terraform plan"
+terraform plan src/terraform
+
+next_stage "terraform apply"
+terraform apply src/terraform

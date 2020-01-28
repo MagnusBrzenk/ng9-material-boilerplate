@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# Parse output of terraform state to isolate and define variable $invoke_url
+eval $(terraform state show -no-color aws_api_gateway_deployment.production | grep invoke_url | sed 's/ //g')
+
+# Print and export $invoke_url
+echo -e """
+==============================================================================
+The invoke url is\033[31m ${invoke_url} \033[0m
+==============================================================================
+"""
+export invoke_url=$invoke_url
