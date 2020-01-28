@@ -1,4 +1,7 @@
-
+# Specify region
+provider "aws" {
+  region = "us-east-1"
+}
 
 # Here we specify the bucket for production site
 resource "aws_s3_bucket" "prod_bucket" {

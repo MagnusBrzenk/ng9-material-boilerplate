@@ -8,8 +8,23 @@ source _invoke_url_export
 # AWS Console > Amazon API GAteway > [Name of API; default is 'las'] > Stages > POST
 url=$invoke_url/contact
 
+echo """
+
+=======================================================================================
+Testing Emailer at endpoint: $url
+=======================================================================================
+
+"""
+
+curl \
+  -H "Content-Type: application/json" \
+  -X OPTIONS \
+  -k $url \
+  -v
+
 curl \
   -d '{"name":"Scrooge", "email":"ddarg@umd.edu" , "message":"Gooday mate!!!"}' \
   -H "Content-Type: application/json" \
   -X POST \
-  -k $url
+  -k $url \
+  -v

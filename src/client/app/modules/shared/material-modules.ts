@@ -11,9 +11,10 @@ import {
   // MatDialogModule,
   // MatDividerModule,
   // MatExpansionModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
-  // MatInputModule,
+  MatInputModule,
   MatListModule,
   // MatMenuModule,
   // MatNativeDateModule,
@@ -34,18 +35,24 @@ import {
   MatToolbarModule
   // MatTooltipModule,
   // MatTreeModule,
-  // MatFormField,
-  // MatFormFieldModule
 } from '@angular/material';
+
+// Provides functionality for auto-scaling input fields; useful in forms
+// See: https://material.angular.io/cdk/text-field/overview
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 export const materialModules = [
   //
   MatButtonModule,
   MatCardModule,
   MatGridListModule,
+  MatFormFieldModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatSidenavModule,
   MatSnackBarModule,
-  MatToolbarModule
+  MatToolbarModule,
+  //
+  TextFieldModule
 ];
