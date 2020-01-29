@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from './routing.module';
+import { AppEntryComponent } from './app-entry/app-entry.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
-import { CoreModule } from './modules/core/core.module';
-import { SharedModule } from './modules/shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -17,10 +17,17 @@ import { TestPageComponent } from './components/test-page/test-page.component';
 import { TestUsersPageComponent } from './components/test-users-page/test-users-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { TestMoreUsersPageComponent } from './components/test-more-users/test-more-users-page.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './ngrx/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { TestUserEffects } from './ngrx/effects/test-user/test-user.effects';
+import { SiteSettingsEffects } from './ngrx/effects/site-settings/site-settings.effects';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppEntryComponent,
     HeaderComponent,
     FooterComponent,
     SideNavComponent,
@@ -29,7 +36,8 @@ import { environment } from '../environments/environment';
     ContactPageComponent,
     SettingsPageComponent,
     TestPageComponent,
-    TestUsersPageComponent
+    TestUsersPageComponent,
+    TestMoreUsersPageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +45,13 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    //
+    EffectsModule.forRoot([TestUserEffects, SiteSettingsEffects]),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppEntryComponent]
 })
-export class AppModule { }
+export class AppModule {}

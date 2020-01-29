@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { State } from '../../ngrx/reducers';
+import { Store } from '@ngrx/store';
+import { SetSiteTheme } from '../../ngrx/actions/site-settings.actions';
 
 @Component({
   selector: 'app-home-page',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  //
 
-  constructor() { }
+  settings: any;
 
-  ngOnInit() {
+  constructor(private store: Store<State>) {
+    // Start listening for changes
+    this.store
+      .select(state => state.siteSettingsSubstate)
+      .subscribe(substate => (this.settings = JSON.stringify(substate)));
   }
 
+  ngOnInit() {}
+
+  onSubmitLight() {
+    console.log('Light Button pressed');
+    this.store.dispatch(new SetSiteTheme('LIGHT-THEME'));
+  }
+  onSubmitDark() {
+    console.log('Dark Button pressed');
+    this.store.dispatch(new SetSiteTheme('DARK-THEME'));
+  }
 }

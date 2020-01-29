@@ -6,6 +6,7 @@ import { ContactPageComponent } from './components/contact-page/contact-page.com
 import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 import { TestPageComponent } from './components/test-page/test-page.component';
 import { TestUsersPageComponent } from './components/test-users-page/test-users-page.component';
+import { TestMoreUsersPageComponent } from './components/test-more-users/test-more-users-page.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path: 'test-users',
     component: TestUsersPageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'test-more-users',
+    component: TestMoreUsersPageComponent,
     pathMatch: 'full'
   },
   {

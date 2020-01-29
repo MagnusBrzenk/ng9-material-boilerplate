@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="well">
+    <h2>Enter a user name:</h2>
+    <input type="text" #username placeholder="Username" class="form-control" />
+    <br />
+    <button class="btn btn-primary" (click)="addUser(username.value)">
+      Add User
+    </button>
+  </div>
+
+  <div style="display: inline-block; background: green; width: 30%;">
+    <div *ngFor="let user of users">
+      <div style="display: block; background: rgba(0,0,0,0.2)">
+        {{ user.username + ' ' + user.id }}
+      </div>
+    </div>
+  </div>
+
+  <div style="display: inline-block; background: red; width: 30%;">
+    <div *ngFor="let user of everyOtherUser">
+      <div style="display: block; background: rgba(255,0,0,0.2)">
+        {{ user.username + ' ' + user.id }}
+      </div>
+    </div>
+  </div>
+</div>

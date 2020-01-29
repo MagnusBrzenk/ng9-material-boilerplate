@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import { IUser } from 'src/client/app/models/user.model';
-import { TestDataService } from 'src/client/app/modules/core/services/test-data.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ITestUser, TestUser } from 'src/client/app/models/user.model';
+import { TestDataService } from 'src/client/app/core/services/test-data/test-data.service';
 
 @Component({
   selector: 'app-test-users-page',
@@ -11,8 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class TestUsersPageComponent implements OnInit {
   //
-
-  users: IUser[];
+  users: ITestUser[];
 
   constructor(private testData: TestDataService, private route: ActivatedRoute) {}
 

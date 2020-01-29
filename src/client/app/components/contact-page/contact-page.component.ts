@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
-import { EmailerService } from '../../modules/core/services/emailer.service';
+import { EmailerService } from '../../core/services/emailer/emailer.service';
 
 // import { ROUTE_ANIMATIONS_ELEMENTS } from '@src/app/core/animations/route-change.animations';
 const ROUTE_ANIMATIONS_ELEMENTS = '';

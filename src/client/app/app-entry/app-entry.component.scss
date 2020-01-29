@@ -1,4 +1,4 @@
-@import '../styles-variables';
+@import '../../styles-variables';
 
 mat-sidenav-container {
   position: relative;
@@ -16,7 +16,7 @@ mat-sidenav-container {
     background-color: yellow;
 
     /**
-      The following three '-wrapper' divs combine with mat-sidenav-content and its flex-direction-column setting to generate a sticky footer effect. This pattern is taken from [here](https://github.com/CanKattwinkel/material-2-sticky-footer-mat-sidenav)
+       The following three '-wrapper' divs combine with mat-sidenav-content and its flex-direction-column setting to generate a sticky footer effect. This pattern is taken from [here](https://github.com/CanKattwinkel/material-2-sticky-footer-mat-sidenav)
     **/
 
     .header-wrapper {
