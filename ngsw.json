@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580484936586,
+  "timestamp": 1580485565967,
   "index": "/ng9-material-boilerplate/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/ng9-material-boilerplate/favicon.ico",
         "/ng9-material-boilerplate/index.html",
-        "/ng9-material-boilerplate/main-es2015.7b826664b0ed6494c450.js",
-        "/ng9-material-boilerplate/main-es5.7b826664b0ed6494c450.js",
+        "/ng9-material-boilerplate/main-es2015.8654254a73776479fe2f.js",
+        "/ng9-material-boilerplate/main-es5.8654254a73776479fe2f.js",
         "/ng9-material-boilerplate/manifest.webmanifest",
         "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js",
         "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js",
@@ -63,9 +63,9 @@
     "/ng9-material-boilerplate/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/ng9-material-boilerplate/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/ng9-material-boilerplate/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ng9-material-boilerplate/index.html": "91ddaac692fc49ece48e276aec4e1bf3fcd9f52b",
-    "/ng9-material-boilerplate/main-es2015.7b826664b0ed6494c450.js": "f6098b282a1c23791dee42c1ce2fff2d86b29c31",
-    "/ng9-material-boilerplate/main-es5.7b826664b0ed6494c450.js": "f4d8d2a0fc526c06ff1027e41d60307c8ae2178b",
+    "/ng9-material-boilerplate/index.html": "86140b548090b1058417ae9ab0f5702cfe2630a2",
+    "/ng9-material-boilerplate/main-es2015.8654254a73776479fe2f.js": "0a8749c4ce49f52b8a885ce304835594c981f330",
+    "/ng9-material-boilerplate/main-es5.8654254a73776479fe2f.js": "1ed13e0d3daab240eba426e36250c5a5eeee0d50",
     "/ng9-material-boilerplate/manifest.webmanifest": "9156b07fe54b6b3e1cb7667fbb39ee374a1fd92f",
     "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js": "264e8d18de3e73db3fd7e5eeba5ef16059fe4e82",
     "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js": "c67cac4940059d7193f15f76f936f463fb2f12b1",
