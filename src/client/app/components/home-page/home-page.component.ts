@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { State } from '../../ngrx/reducers';
+import { AppState } from '../../ngrx/reducers';
 import { Store } from '@ngrx/store';
 import { SetSiteTheme } from '../../ngrx/actions/site-settings.actions';
 
@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
 
   settings: any;
 
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<AppState>) {
     // Start listening for changes
     this.store
       .select(state => state.siteSettingsSubstate)

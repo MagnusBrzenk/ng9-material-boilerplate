@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars, faCog } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,8 +6,6 @@ import { faBars, faCog } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-  faCog = faCog;
-
   constructor() {}
 
   ngOnInit() {}

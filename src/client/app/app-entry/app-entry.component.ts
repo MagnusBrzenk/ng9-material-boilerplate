@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State } from '../ngrx/reducers';
+import { AppState } from '../ngrx/reducers';
 import {
   LoadSiteSettingsFromLocalStorage,
   SetSiteTheme
@@ -15,7 +15,7 @@ import { LocalStorageService } from '../core/services/local-storage/local-storag
 export class AppEntryComponent {
   title = 'ng9-boilerplate';
 
-  constructor(private localStorageService: LocalStorageService, private store: Store<State>) {
+  constructor(private localStorageService: LocalStorageService, private store: Store<AppState>) {
     //
     // Tasks for on-site loading
     //

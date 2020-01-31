@@ -1,6 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SideNavComponent } from './side-nav.component';
+import { SharedModule } from '../../shared/shared.module';
+import { FaIconComponent, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgModule } from '@angular/core';
+import { AppModule } from '../../app.module';
+
+@NgModule({
+  imports: [FontAwesomeModule],
+  declarations: [FaIconComponent],
+  entryComponents: [FaIconComponent]
+})
+class TestModule {}
 
 describe('SideNavComponent', () => {
   let component: SideNavComponent;
@@ -8,9 +19,9 @@ describe('SideNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SideNavComponent ]
-    })
-    .compileComponents();
+      imports: [SharedModule],
+      declarations: [SideNavComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

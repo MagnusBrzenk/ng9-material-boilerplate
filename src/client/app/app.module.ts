@@ -24,6 +24,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { TestUserEffects } from './ngrx/effects/test-user/test-user.effects';
 import { SiteSettingsEffects } from './ngrx/effects/site-settings/site-settings.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -47,11 +48,18 @@ import { SiteSettingsEffects } from './ngrx/effects/site-settings/site-settings.
     SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     //
+    // ngrx
     EffectsModule.forRoot([TestUserEffects, SiteSettingsEffects]),
     StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    //
+    // Dispatch actions on routing events
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' })
   ],
   providers: [],
   bootstrap: [AppEntryComponent]
 })
 export class AppModule {}
+
+export const testingImports = [];
+export const nonTestingImports = [];

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITestUser, TestUser } from '../../models/user.model';
 import { Store } from '@ngrx/store';
-import { State } from '../../ngrx/reducers';
+import { AppState } from '../../ngrx/reducers';
 import { AddTestUser, LoadTestUsers } from '../../ngrx/actions/test-user.actions';
 import { selectTestUserList, selectTestUserEveryOtherList } from '../../ngrx/selectors';
 
@@ -14,7 +14,7 @@ export class TestMoreUsersPageComponent implements OnInit {
   users: ITestUser[];
   everyOtherUser: ITestUser[];
 
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<AppState>) {
     store.select(selectTestUserList).subscribe(testUsers => (this.users = testUsers));
     store
       .select(selectTestUserEveryOtherList)
@@ -30,8 +30,6 @@ export class TestMoreUsersPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Working?
-    console.log('Dispathc load user event');
     this.store.dispatch(new LoadTestUsers());
   }
 }

@@ -5,7 +5,7 @@ import { mergeMap, catchError, map, withLatestFrom } from 'rxjs/operators';
 import { LocalStorageService } from 'src/client/app/core/services/local-storage/local-storage.service';
 import { ESiteSettingsActionTypes, SetSiteSettings } from '../../actions/site-settings.actions';
 import { Store } from '@ngrx/store';
-import { State } from '../../reducers';
+import { AppState } from '../../reducers';
 
 @Injectable()
 export class SiteSettingsEffects {
@@ -49,6 +49,6 @@ export class SiteSettingsEffects {
   constructor(
     private actions$: Actions<any>,
     private localStorageService: LocalStorageService,
-    private store$: Store<State>
+    private store$: Store<AppState>
   ) {}
 }

@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { State } from '../reducers';
+import { AppState } from '../reducers';
 import { ITestUserSubstate } from '../reducers/test-user/test-user.reducer';
 
 /**
@@ -11,11 +11,11 @@ import { ITestUserSubstate } from '../reducers/test-user/test-user.reducer';
  */
 
 export const selectTestUserList = createSelector(
-  (state: State) => state.testUserSubstate,
+  (state: AppState) => state.testUserSubstate,
   (substate: ITestUserSubstate) => substate.testUsers
 );
 
 export const selectTestUserEveryOtherList = createSelector(
-  (state: State) => state.testUserSubstate,
+  (state: AppState) => state.testUserSubstate,
   (substate: ITestUserSubstate) => substate.testUsers.filter((el, ind) => ind % 2 !== 0)
 );

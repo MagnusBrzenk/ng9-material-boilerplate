@@ -5,16 +5,18 @@ import { materialModules } from './material-modules';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule, FaIconComponent } from '@fortawesome/angular-fontawesome';
 
+import { FontAwesomeIconsModule } from './font-awesome-icons.module';
+
 @NgModule({
-  declarations: [],
   imports: [],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule,
+    // FontAwesomeModule,
+    FontAwesomeIconsModule,
     ...[materialModules]
-  ],
-  entryComponents: [FaIconComponent]
+  ]
+  // entryComponents: [FaIconComponent]
 })
 export class SharedModule {}
