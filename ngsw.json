@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580488269612,
+  "timestamp": 1580488736225,
   "index": "/ng9-material-boilerplate/index.html",
   "assetGroups": [
     {
@@ -28,6 +28,8 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "/ng9-material-boilerplate/assets/comp.jpg",
+        "/ng9-material-boilerplate/assets/comp.jpg.zip",
         "/ng9-material-boilerplate/assets/icons/icon-128x128.png",
         "/ng9-material-boilerplate/assets/icons/icon-144x144.png",
         "/ng9-material-boilerplate/assets/icons/icon-152x152.png",
@@ -36,7 +38,10 @@
         "/ng9-material-boilerplate/assets/icons/icon-512x512.png",
         "/ng9-material-boilerplate/assets/icons/icon-72x72.png",
         "/ng9-material-boilerplate/assets/icons/icon-96x96.png",
-        "/ng9-material-boilerplate/assets/pirates_v1.jpg"
+        "/ng9-material-boilerplate/assets/pirates_v1.jpg",
+        "/ng9-material-boilerplate/assets/pirates_v1.jpg.zip",
+        "/ng9-material-boilerplate/assets/trees.jpg",
+        "/ng9-material-boilerplate/assets/trees.jpg.zip"
       ],
       "patterns": []
     }
@@ -55,6 +60,8 @@
     }
   ],
   "hashTable": {
+    "/ng9-material-boilerplate/assets/comp.jpg": "d206560f1d4d488336fdab3012f28243ad21a08f",
+    "/ng9-material-boilerplate/assets/comp.jpg.zip": "f71ca922eb40034fb27f79afd355eeaaf10789b4",
     "/ng9-material-boilerplate/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/ng9-material-boilerplate/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/ng9-material-boilerplate/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -64,6 +71,9 @@
     "/ng9-material-boilerplate/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/ng9-material-boilerplate/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/ng9-material-boilerplate/assets/pirates_v1.jpg": "68d47b3fc7ae8c6d9c0c53ecccc945ed4492b336",
+    "/ng9-material-boilerplate/assets/pirates_v1.jpg.zip": "f1da2a0c6eca74fdb9c834db879e6623d92247c8",
+    "/ng9-material-boilerplate/assets/trees.jpg": "28cb101c016f8bba6910554d45062d121f055a9b",
+    "/ng9-material-boilerplate/assets/trees.jpg.zip": "56088dd56bb6221cde37a6a93bd6350de003f34e",
     "/ng9-material-boilerplate/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/ng9-material-boilerplate/index.html": "86140b548090b1058417ae9ab0f5702cfe2630a2",
     "/ng9-material-boilerplate/main-es2015.8654254a73776479fe2f.js": "0a8749c4ce49f52b8a885ce304835594c981f330",
