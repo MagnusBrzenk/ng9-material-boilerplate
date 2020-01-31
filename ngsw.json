@@ -1,0 +1,96 @@
+{
+  "configVersion": 1,
+  "timestamp": 1580484936586,
+  "index": "/ng9-material-boilerplate/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ng9-material-boilerplate/favicon.ico",
+        "/ng9-material-boilerplate/index.html",
+        "/ng9-material-boilerplate/main-es2015.7b826664b0ed6494c450.js",
+        "/ng9-material-boilerplate/main-es5.7b826664b0ed6494c450.js",
+        "/ng9-material-boilerplate/manifest.webmanifest",
+        "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js",
+        "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js",
+        "/ng9-material-boilerplate/runtime-es2015.0d18029cc48539ed2f99.js",
+        "/ng9-material-boilerplate/runtime-es5.0d18029cc48539ed2f99.js",
+        "/ng9-material-boilerplate/styles.74ec06d1664c318f620d.css",
+        "/ng9-material-boilerplate/vendor-es2015.86ca690cffc260febe3d.js",
+        "/ng9-material-boilerplate/vendor-es5.86ca690cffc260febe3d.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ng9-material-boilerplate/assets/icons/icon-128x128.png",
+        "/ng9-material-boilerplate/assets/icons/icon-144x144.png",
+        "/ng9-material-boilerplate/assets/icons/icon-152x152.png",
+        "/ng9-material-boilerplate/assets/icons/icon-192x192.png",
+        "/ng9-material-boilerplate/assets/icons/icon-384x384.png",
+        "/ng9-material-boilerplate/assets/icons/icon-512x512.png",
+        "/ng9-material-boilerplate/assets/icons/icon-72x72.png",
+        "/ng9-material-boilerplate/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-offline-demo",
+      "patterns": [
+        "https:\\/\\/jsonplaceholder\\.typicode\\.com\\/users\\/"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "timeoutMs": 10000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/ng9-material-boilerplate/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ng9-material-boilerplate/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ng9-material-boilerplate/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ng9-material-boilerplate/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ng9-material-boilerplate/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ng9-material-boilerplate/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ng9-material-boilerplate/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ng9-material-boilerplate/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ng9-material-boilerplate/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/ng9-material-boilerplate/index.html": "91ddaac692fc49ece48e276aec4e1bf3fcd9f52b",
+    "/ng9-material-boilerplate/main-es2015.7b826664b0ed6494c450.js": "f6098b282a1c23791dee42c1ce2fff2d86b29c31",
+    "/ng9-material-boilerplate/main-es5.7b826664b0ed6494c450.js": "f4d8d2a0fc526c06ff1027e41d60307c8ae2178b",
+    "/ng9-material-boilerplate/manifest.webmanifest": "9156b07fe54b6b3e1cb7667fbb39ee374a1fd92f",
+    "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js": "264e8d18de3e73db3fd7e5eeba5ef16059fe4e82",
+    "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js": "c67cac4940059d7193f15f76f936f463fb2f12b1",
+    "/ng9-material-boilerplate/runtime-es2015.0d18029cc48539ed2f99.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/ng9-material-boilerplate/runtime-es5.0d18029cc48539ed2f99.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/ng9-material-boilerplate/styles.74ec06d1664c318f620d.css": "6a85531c1689070c99e38b14dcedd73a96193407",
+    "/ng9-material-boilerplate/vendor-es2015.86ca690cffc260febe3d.js": "13daa381f34b8dc9e817e3a29fb81d77a3ee68bc",
+    "/ng9-material-boilerplate/vendor-es5.86ca690cffc260febe3d.js": "8b61c348664551975ded9762a5964d5cc32ca568"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
