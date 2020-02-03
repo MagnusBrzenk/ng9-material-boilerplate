@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580488736225,
+  "timestamp": 1580699263893,
   "index": "/ng9-material-boilerplate/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/ng9-material-boilerplate/favicon.ico",
         "/ng9-material-boilerplate/index.html",
-        "/ng9-material-boilerplate/main-es2015.8654254a73776479fe2f.js",
-        "/ng9-material-boilerplate/main-es5.8654254a73776479fe2f.js",
+        "/ng9-material-boilerplate/main-es2015.e00d8dfc23dfbe3ff90d.js",
+        "/ng9-material-boilerplate/main-es5.e00d8dfc23dfbe3ff90d.js",
         "/ng9-material-boilerplate/manifest.webmanifest",
         "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js",
         "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js",
@@ -37,11 +37,7 @@
         "/ng9-material-boilerplate/assets/icons/icon-384x384.png",
         "/ng9-material-boilerplate/assets/icons/icon-512x512.png",
         "/ng9-material-boilerplate/assets/icons/icon-72x72.png",
-        "/ng9-material-boilerplate/assets/icons/icon-96x96.png",
-        "/ng9-material-boilerplate/assets/pirates_v1.jpg",
-        "/ng9-material-boilerplate/assets/pirates_v1.jpg.zip",
-        "/ng9-material-boilerplate/assets/trees.jpg",
-        "/ng9-material-boilerplate/assets/trees.jpg.zip"
+        "/ng9-material-boilerplate/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
@@ -70,14 +66,10 @@
     "/ng9-material-boilerplate/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/ng9-material-boilerplate/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/ng9-material-boilerplate/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/ng9-material-boilerplate/assets/pirates_v1.jpg": "68d47b3fc7ae8c6d9c0c53ecccc945ed4492b336",
-    "/ng9-material-boilerplate/assets/pirates_v1.jpg.zip": "f1da2a0c6eca74fdb9c834db879e6623d92247c8",
-    "/ng9-material-boilerplate/assets/trees.jpg": "28cb101c016f8bba6910554d45062d121f055a9b",
-    "/ng9-material-boilerplate/assets/trees.jpg.zip": "56088dd56bb6221cde37a6a93bd6350de003f34e",
     "/ng9-material-boilerplate/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ng9-material-boilerplate/index.html": "86140b548090b1058417ae9ab0f5702cfe2630a2",
-    "/ng9-material-boilerplate/main-es2015.8654254a73776479fe2f.js": "0a8749c4ce49f52b8a885ce304835594c981f330",
-    "/ng9-material-boilerplate/main-es5.8654254a73776479fe2f.js": "1ed13e0d3daab240eba426e36250c5a5eeee0d50",
+    "/ng9-material-boilerplate/index.html": "d12abb83c213666fd9eed12b731f3e90db22dba4",
+    "/ng9-material-boilerplate/main-es2015.e00d8dfc23dfbe3ff90d.js": "f9ca3c314b8717a485363c2fd229454df16f294f",
+    "/ng9-material-boilerplate/main-es5.e00d8dfc23dfbe3ff90d.js": "b267620efe0f5fa724d3c1949a6feecdfcf7fc44",
     "/ng9-material-boilerplate/manifest.webmanifest": "9156b07fe54b6b3e1cb7667fbb39ee374a1fd92f",
     "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js": "264e8d18de3e73db3fd7e5eeba5ef16059fe4e82",
     "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js": "c67cac4940059d7193f15f76f936f463fb2f12b1",
