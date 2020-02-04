@@ -26,9 +26,9 @@ describe('SiteSettingsEffects', () => {
         provideMockStore({ initialState })
       ]
     });
-
+    // @ts-ignore:
     effects = TestBed.get<SiteSettingsEffects>(SiteSettingsEffects);
-
+    // @ts-ignore:
     store = TestBed.get<Store<any>>(Store);
   });
 

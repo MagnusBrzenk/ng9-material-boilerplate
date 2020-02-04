@@ -20,6 +20,7 @@ describe('TestMoreUsersPageComponent', () => {
       declarations: [TestMoreUsersPageComponent],
       providers: [provideMockStore({ initialState })]
     }).compileComponents();
+    // @ts-ignore:
     store = TestBed.get<Store<any>>(Store);
   }));
 

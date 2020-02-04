@@ -19,12 +19,10 @@ describe('HomePageComponent', () => {
       declarations: [HomePageComponent],
       providers: [provideMockStore({ initialState })]
     }).compileComponents();
+    // @ts-ignore
     store = TestBed.get<Store<any>>(Store);
   }));
 
- 
- 
- 
   beforeEach(() => {
     fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;

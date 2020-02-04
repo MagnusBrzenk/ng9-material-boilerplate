@@ -20,6 +20,7 @@ describe('AppEntryComponent', () => {
       declarations: [AppEntryComponent, SideNavComponent, HeaderComponent, FooterComponent],
       providers: [provideMockStore({ initialState })]
     }).compileComponents();
+    // @ts-ignore:
     store = TestBed.get<Store<any>>(Store);
   }));
 

@@ -15,7 +15,7 @@ describe('TestUserEffects', () => {
       providers: [TestUserEffects, provideMockActions(() => actions$), TestDataService],
       imports: [HttpClientTestingModule]
     });
-
+    // @ts-ignore:
     effects = TestBed.get<TestUserEffects>(TestUserEffects);
   });
 

@@ -17,7 +17,7 @@ describe('ContactPageComponent', () => {
       imports: [SharedModule, HttpClientTestingModule, BrowserAnimationsModule],
       declarations: [ContactPageComponent]
     }).compileComponents();
-
+    // @ts-ignore:
     httpTestingController = TestBed.get(HttpTestingController);
   }));
 

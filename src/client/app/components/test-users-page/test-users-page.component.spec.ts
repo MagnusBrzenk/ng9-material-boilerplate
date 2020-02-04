@@ -18,6 +18,7 @@ describe('TestUsersPageComponent', () => {
       declarations: [TestUsersPageComponent]
     }).compileComponents();
 
+    // @ts-ignore:
     httpTestingController = TestBed.get(HttpTestingController);
   }));
 

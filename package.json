@@ -53,6 +53,7 @@
     "angular-cli-ghpages": "^0.6.2",
     "aws-sdk": "^2.610.0",
     "codelyzer": "^5.1.2",
+    "husky": "^4.2.1",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
@@ -60,7 +61,9 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "lint-staged": "^8.2.1",
     "path": "^0.12.7",
+    "prettier": "^1.19.1",
     "protractor": "~5.4.2",
     "terser-webpack-plugin": "^2.3.3",
     "ts-loader": "^6.2.1",
@@ -71,5 +74,21 @@
     "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.10",
     "webpack-node-externals": "^1.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo '>>> Running Husky' && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "{src,e2e}/**/*.{ts,json,md,scss,html}": [
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "**/dist/*.min.js"
+    ]
   }
 }
