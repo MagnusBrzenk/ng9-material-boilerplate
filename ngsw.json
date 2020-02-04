@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580708565031,
+  "timestamp": 1580859819356,
   "index": "/ng9-material-boilerplate/index.html",
   "assetGroups": [
     {
@@ -10,16 +10,16 @@
       "urls": [
         "/ng9-material-boilerplate/favicon.ico",
         "/ng9-material-boilerplate/index.html",
-        "/ng9-material-boilerplate/main-es2015.e00d8dfc23dfbe3ff90d.js",
-        "/ng9-material-boilerplate/main-es5.e00d8dfc23dfbe3ff90d.js",
+        "/ng9-material-boilerplate/main-es2015.0370f43c31a77878eb2a.js",
+        "/ng9-material-boilerplate/main-es5.0370f43c31a77878eb2a.js",
         "/ng9-material-boilerplate/manifest.webmanifest",
         "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js",
         "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js",
         "/ng9-material-boilerplate/runtime-es2015.0d18029cc48539ed2f99.js",
         "/ng9-material-boilerplate/runtime-es5.0d18029cc48539ed2f99.js",
-        "/ng9-material-boilerplate/styles.74ec06d1664c318f620d.css",
-        "/ng9-material-boilerplate/vendor-es2015.86ca690cffc260febe3d.js",
-        "/ng9-material-boilerplate/vendor-es5.86ca690cffc260febe3d.js"
+        "/ng9-material-boilerplate/styles.2400a9633655100b85a8.css",
+        "/ng9-material-boilerplate/vendor-es2015.85f0d754b6fe8abfee7a.js",
+        "/ng9-material-boilerplate/vendor-es5.85f0d754b6fe8abfee7a.js"
       ],
       "patterns": []
     },
@@ -67,17 +67,17 @@
     "/ng9-material-boilerplate/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/ng9-material-boilerplate/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/ng9-material-boilerplate/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/ng9-material-boilerplate/index.html": "d12abb83c213666fd9eed12b731f3e90db22dba4",
-    "/ng9-material-boilerplate/main-es2015.e00d8dfc23dfbe3ff90d.js": "f9ca3c314b8717a485363c2fd229454df16f294f",
-    "/ng9-material-boilerplate/main-es5.e00d8dfc23dfbe3ff90d.js": "b267620efe0f5fa724d3c1949a6feecdfcf7fc44",
+    "/ng9-material-boilerplate/index.html": "cb509df4014f4a382b68a5e71245a2cf46027d38",
+    "/ng9-material-boilerplate/main-es2015.0370f43c31a77878eb2a.js": "84752477c6bd18bfe4358ac74c3a3783890cccbd",
+    "/ng9-material-boilerplate/main-es5.0370f43c31a77878eb2a.js": "7b88bc435de69a4908e9aeba0e60241dfd55ac9d",
     "/ng9-material-boilerplate/manifest.webmanifest": "9156b07fe54b6b3e1cb7667fbb39ee374a1fd92f",
     "/ng9-material-boilerplate/polyfills-es2015.aca4a1fafea4ce6d6bce.js": "264e8d18de3e73db3fd7e5eeba5ef16059fe4e82",
     "/ng9-material-boilerplate/polyfills-es5.750143fa1051335e33d1.js": "c67cac4940059d7193f15f76f936f463fb2f12b1",
     "/ng9-material-boilerplate/runtime-es2015.0d18029cc48539ed2f99.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/ng9-material-boilerplate/runtime-es5.0d18029cc48539ed2f99.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/ng9-material-boilerplate/styles.74ec06d1664c318f620d.css": "6a85531c1689070c99e38b14dcedd73a96193407",
-    "/ng9-material-boilerplate/vendor-es2015.86ca690cffc260febe3d.js": "13daa381f34b8dc9e817e3a29fb81d77a3ee68bc",
-    "/ng9-material-boilerplate/vendor-es5.86ca690cffc260febe3d.js": "8b61c348664551975ded9762a5964d5cc32ca568"
+    "/ng9-material-boilerplate/styles.2400a9633655100b85a8.css": "ddcb8b0f64d510e941dd6d35a3e6f6b2d6e638fa",
+    "/ng9-material-boilerplate/vendor-es2015.85f0d754b6fe8abfee7a.js": "24459dfed6ca4ef5a88a73dd8fffd9b8b262a832",
+    "/ng9-material-boilerplate/vendor-es5.85f0d754b6fe8abfee7a.js": "1d83ec7420589a063d5cc620a3805d7997ab8e4c"
   },
   "navigationUrls": [
     {
