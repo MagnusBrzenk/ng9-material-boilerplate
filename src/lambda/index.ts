@@ -18,7 +18,6 @@ console.log('Hello from the outside');
  * Function to call to return response to user
  *
  */
-// const handler = async function(
 exports.handler = async function(
   event: any,
   context: AWSLambda.Context,

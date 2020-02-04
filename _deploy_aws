@@ -10,11 +10,9 @@
 
 clear
 
-# Load all env variables
 source .env
 
 # If no argument supplied, prompt user to choose deployment
-
 deploy_option=$1
 
 if [[ -z $deploy_option ]]; then
@@ -42,16 +40,13 @@ if [[ $deploy_option =~ ^[0-9]+$ && $deploy_option -ge 1 && $deploy_option -le 2
     clear
     echo "Deploying to dev..."
     sleep 1
-    bucket_name=$TF_VAR_dev_bucket_name
-    tf_bucket_label="dev_bucket"
-
+    bucket_name="$TF_VAR_PREFIX""$TF_VAR_DEV_BUCKET_NAME"
   fi
   if [[ $deploy_option = 2 ]]; then
     clear
     echo "Deploying to prod..."
     sleep 1
-    bucket_name=$TF_VAR_prod_bucket_name
-    tf_bucket_label="prod_bucket"
+    bucket_name="$TF_VAR_PREFIX""$TF_VAR_PROD_BUCKET_NAME"
   fi
 else
 
@@ -88,20 +83,5 @@ aws s3 rm s3://${bucket_name} --recursive
 # Sync dist with bucket
 aws s3 sync ./dist-client/ s3://${bucket_name}/
 
-# Isolate $website_endpoint variable from `terraform state` output
-# eval $(terraform state show -no-color aws_s3_bucket.prod_bucket | grep website_endpoint | sed 's/ //g')
-
-eval $(terraform state show -no-color aws_s3_bucket.$(echo $tf_bucket_label) | grep website_endpoint | sed 's/ //g')
-
-# Inform user of updated site location
-echo -e """
-
-===============================================================
-
-Hurray! You can expect to find your site deployed worldwide at:
-
-\033[31m $website_endpoint \033[0m
-
-===============================================================
-
-"""
+# Final printout
+./_show_website_endpoints

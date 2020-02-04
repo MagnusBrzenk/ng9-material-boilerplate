@@ -38,6 +38,13 @@ else
   exit
 fi
 
+# Ensure the terraform dirs have been initialized
+if [[ ! -d $script_path/.terraform ]]; then
+  echo $script_path
+  terraform init $script_path/
+fi
+
+# Define pause-messaging function
 function pause_before_next_stage() {
   echo -e """
     =======================================

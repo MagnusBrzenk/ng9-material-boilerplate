@@ -1,10 +1,18 @@
 #! /bin/bash
 
-# Parse output of terraform state to isolate and define variable $invoke_url
-eval $(terraform state show -no-color aws_api_gateway_deployment.production | grep invoke_url | sed 's/ //g')
+# Parse output of terraform state to isolate and define variable $invoke_url for lambda emailer
+# If you mess with the module structure of the terraform scripts, you'll need to run `terraform state list`
+# to figure out the
+eval $(terraform state show -no-color module.lambda_api_gateway_module.aws_api_gateway_deployment.production | grep invoke_url | sed 's/ //g')
+
+# Exit if $invoke_url failed to set
+if [[ -z $invoke_url ]]; then
+  echo ">>> invoke_url has no value. Run \`.\_run_terraform\` to build the lambda emailer"
+  exit
+fi
 
 # Print and export $invoke_url
-echo -e """
+[[ $1 != '--quiet' ]] && echo -e """
 ==============================================================================
 The invoke url is\033[31m ${invoke_url} \033[0m
 ==============================================================================

@@ -10,7 +10,7 @@ export class EmailerService {
   constructor(private http: HttpClient) {}
 
   sendEmail(name: string, email: string, message: string): Observable<string> {
-    const apiUrl = environment.emailerEndpoint;
+    let apiUrl = environment.emailerEndpoint;
 
     return this.http.post<any>(`${apiUrl}/contact/`, {
       name,

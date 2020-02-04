@@ -13,7 +13,7 @@ export class SiteSettingsEffects {
   loadSiteSettings$: Observable<any> = this.actions$.pipe(
     ofType(ESiteSettingsActionTypes.LoadSiteSettingsFromLocalStorage),
     map(data => {
-      console.log('Effects pipeline pinged');
+      // console.log('Effects pipeline pinged');
       const lss = this.localStorageService.getLocalStorageState();
       return new SetSiteSettings(lss);
     })
@@ -27,22 +27,14 @@ export class SiteSettingsEffects {
       ESiteSettingsActionTypes.SetIsPageAnimated
     ),
     map(data => {
-      console.log('?????');
+      // console.log('data');
       return data;
     }),
 
-    // mergeMap(),
     withLatestFrom(this.store$),
     map(data => {
-      console.log('Updating local storage...');
-      console.log(data);
-      // console.log('Effects pipeline pinged');
-      // const lss = this.localStorageService.getLocalStorageState();
-      // return new SetSiteSettings(lss);
-      const x = data[1].siteSettingsSubstate;
-      this.localStorageService.setItem('siteTheme', x.siteTheme);
-      // return data;
-      // return null;
+      const siteSettingsSubstate = data[1].siteSettingsSubstate;
+      this.localStorageService.setItem('siteTheme', siteSettingsSubstate.siteTheme);
     })
   );
 

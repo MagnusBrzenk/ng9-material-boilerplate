@@ -23,11 +23,9 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {}
 
   onSubmitLight() {
-    console.log('Light Button pressed');
     this.store.dispatch(new SetSiteTheme('LIGHT-THEME'));
   }
   onSubmitDark() {
-    console.log('Dark Button pressed');
     this.store.dispatch(new SetSiteTheme('DARK-THEME'));
   }
 }

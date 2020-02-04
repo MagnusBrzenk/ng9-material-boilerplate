@@ -26,7 +26,8 @@ resource "aws_api_gateway_integration" "integration" {
   http_method             = aws_api_gateway_method.sendmail.http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
-  uri                     = aws_lambda_function.sendmail.invoke_arn
+  # uri                     = aws_lambda_function.sendmail.invoke_arn
+  uri = var.lambda_function_invoke_arn
 }
 
 # Create a response for the post method created above
@@ -34,7 +35,12 @@ resource "aws_api_gateway_method_response" "response_200" {
   rest_api_id = aws_api_gateway_rest_api.default.id
   resource_id = aws_api_gateway_resource.main.id
   http_method = aws_api_gateway_method.sendmail.http_method
-  status_code = tonumber(200)
+  status_code = "${200}"
+  #
+  # AWS Diff
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = false
+  }
 }
 
 # Create an 'integration response' (presumably the message returned from lambda function?!)
@@ -42,9 +48,14 @@ resource "aws_api_gateway_integration_response" "integration_response" {
   rest_api_id = aws_api_gateway_rest_api.default.id
   resource_id = aws_api_gateway_resource.main.id
   http_method = aws_api_gateway_method.sendmail.http_method
-  # status_code = aws_api_gateway_method_response.response_200.status_code
-  status_code = tonumber(200)
+  status_code = aws_api_gateway_method_response.response_200.status_code
   depends_on  = [aws_api_gateway_integration.integration]
+  #
+  # AWS diff
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = "'*'"
+  }
+
 }
 
 # Add an unrestricted HTTP-OPTIONS-request method to api resource created above
@@ -60,16 +71,24 @@ resource "aws_api_gateway_method_response" "options_200" {
   rest_api_id = aws_api_gateway_rest_api.default.id
   resource_id = aws_api_gateway_resource.main.id
   http_method = aws_api_gateway_method.options_method.http_method
-  status_code = tonumber(200)
+  status_code = "${200}"
   response_models = {
     "application/json" = "Empty"
   }
-  response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = true,
-    "method.response.header.Access-Control-Allow-Methods" = true,
-    "method.response.header.Access-Control-Allow-Origin"  = true
-  }
+  # response_parameters = {
+  #   "method.response.header.Access-Control-Allow-Headers" = true,
+  #   "method.response.header.Access-Control-Allow-Methods" = true,
+  #   "method.response.header.Access-Control-Allow-Origin"  = true
+  # }
   depends_on = [aws_api_gateway_method.options_method]
+  #
+  # AWS diff
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = false,
+    "method.response.header.Access-Control-Allow-Methods" = false,
+    "method.response.header.Access-Control-Allow-Origin"  = false
+  }
+
 }
 
 # Integrate options with a mock function
@@ -79,6 +98,15 @@ resource "aws_api_gateway_integration" "options_integration" {
   http_method = aws_api_gateway_method.options_method.http_method
   type        = "MOCK"
   depends_on  = [aws_api_gateway_method.options_method]
+  #
+  # AWS Diff
+  request_templates = {
+    "application/json" = jsonencode(
+      {
+        statusCode = 200
+      }
+    )
+  }
 }
 
 # Create response for options integration
@@ -87,21 +115,27 @@ resource "aws_api_gateway_integration_response" "options_integration_response" {
   resource_id = aws_api_gateway_resource.main.id
   http_method = aws_api_gateway_method.options_method.http_method
   # status_code = aws_api_gateway_method_response.options_200.status_code
-  status_code = tonumber(200)
+  status_code = 200
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
-    "method.response.header.Access-Control-Allow-Methods" = "'GET,OPTIONS,POST,PUT'",
+    "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,POST'",
     "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
   depends_on = [aws_api_gateway_method_response.options_200]
+  #
+  # AWS Diff
+  response_templates = {
+    "application/json" = ""
+  }
 }
 
 
 # Create permission for api resource to invoke lambda function at specified route
 resource "aws_lambda_permission" "allow_api_gateway" {
-  statement_id  = "contact"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.sendmail.function_name
+  statement_id = "contact"
+  action       = "lambda:InvokeFunction"
+  # function_name = aws_lambda_function.sendmail.function_name
+  function_name = var.lambda_function_name
   principal     = "apigateway.amazonaws.com"
 
   # The /*/POST/contact part allows invocation from the POST stage and contact resource path within API Gateway REST API.

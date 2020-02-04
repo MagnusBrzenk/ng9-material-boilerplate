@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Get variable $invoke_url
-source _invoke_url_export
+source _invoke_url_export --quiet
 
 # Test post route to lambda function!
 # This url must be obtained from 'invoke' url in the aws api-gateway console:
@@ -16,15 +16,15 @@ Testing Emailer at endpoint: $url
 
 """
 
-curl \
-  -H "Content-Type: application/json" \
-  -X OPTIONS \
-  -k $url \
-  -v
+# curl \
+#   -H "Content-Type: application/json" \
+#   -X OPTIONS \
+#   -k $url \
+#   -v
 
 curl \
   -d '{"name":"Scrooge", "email":"ddarg@umd.edu" , "message":"Gooday mate!!!"}' \
   -H "Content-Type: application/json" \
   -X POST \
-  -k $url \
-  -v
+  -k $url
+# -v

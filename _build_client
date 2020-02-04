@@ -1,0 +1,71 @@
+#! /bin/bash
+
+clear
+
+# Import env variables:
+if [ -f $PWD/.env ]; then
+  source .env
+else
+  echo "No .env file found!!!"
+  return 1
+fi
+
+# Determine basehref
+if [[ $1 == "github" ]]; then
+  BASE_HREF="/$GITHUB_REPO_NAME/"
+elif [[ -z $1 ]]; then
+  BASE_HREF="/"
+else
+  BASE_HREF="/$1/"
+fi
+
+echo -e """
+\033[32m
+===================================================================
+BUILDING CLIENT BUNDLES \033[36mBASE_HREF=${BASE_HREF} \033[32m
+===================================================================
+\033[0m
+"""
+
+# Inject vars known only-now at build time (e.g. BASE_HREF)
+BASE_HREF=$BASE_HREF ./_inject_build_time_vars --quiet
+if [[ $? == 1 ]]; then exit 1; fi
+
+if [[ $RUN_NG_TEST ]]; then
+  echo -e "\033[32m>>> Running tests... \033[0m"
+  ng test --browsers ChromeHeadless --watch=false >.test_report.txt
+  if [[ $? != 0 ]]; then
+    echo -e "\033[31m Not all tests were succesful! See '.test_report.txt' for details. \033[0m "
+    exit 1
+  fi
+  echo -e "\033[32m>>> ... done! All tests passed! \033[0m"
+fi
+
+# Define name for output dir
+output_dir=dist-$1
+if [[ -z $1 ]]; then
+  output_dir=dist
+fi
+
+# Clean out old compilations
+if [[ -d $output_dir ]]; then
+  rm -rf ./$output_dir
+fi
+
+echo -e "\033[32m>>> Building fresh web app...\033[0m"
+NODE_ENV=prod \
+  ./node_modules/.bin/ng build \
+  --prod \
+  --vendor-chunk \
+  --output-hashing all \
+  --base-href $BASE_HREF \
+  -- --stats-json
+cp -R dist-client $output_dir
+
+echo -e """
+\033[32m
+======================================
+SUCCESSFUL LOCAL BUILD TO $output_dir
+======================================
+\033[0m
+"""

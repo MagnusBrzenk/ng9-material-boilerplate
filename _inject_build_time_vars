@@ -1,0 +1,36 @@
+#! /bin/bash
+
+# This script collects together all variables that are only known
+# at build time and inject them into `environment*.ts` source code.
+
+# Assign default value to $BASE_HREF if not already set
+if [[ -z $BASE_HREF ]]; then
+  echo -e """
+    \033[31mWARNING: BASE_HREF not set. Using default value '/'\033[0m
+  """
+  BASE_HREF='/'
+fi
+
+# Compute variable $invoke_url for lambda emailer
+source _invoke_url_export
+
+########################################
+# Overwrite environment.ts file:
+########################################
+cat >src/client/environments/environment.ts <<EOL
+export const environment = {
+  production: false,
+  emailerEndpoint: '${invoke_url}'
+};
+EOL
+
+########################################
+# Overwrite environment.prod.ts file:
+########################################
+cat >src/client/environments/environment.prod.ts <<EOL
+export const environment = {
+  production: true,
+  emailerEndpoint: '${invoke_url}',
+  basehref: '${BASE_HREF}'
+};
+EOL

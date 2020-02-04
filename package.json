@@ -1,5 +1,5 @@
 {
-  "name": "ng9-boilerplate",
+  "name": "ng9-material-boilerplate",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -49,6 +49,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.12.25",
     "@types/webpack": "^4.41.3",
+    "angular-cli-ghpages": "^0.6.2",
     "aws-sdk": "^2.610.0",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",

@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# Parse output of terraform state to isolate $website_endpoint for S3 buckets
+unset website_endpoint
+eval $(terraform state show -no-color module.dev_s3_bucket_module.aws_s3_bucket.bucket_resource 2>/dev/null | grep website_endpoint | sed 's/ //g')
+dev_website_endpoint=$website_endpoint
+
+unset website_endpoint
+eval $(terraform state show -no-color module.prod_s3_bucket_module.aws_s3_bucket.bucket_resource 2>/dev/null | grep website_endpoint | sed 's/ //g')
+prod_website_endpoint=$website_endpoint
+
+if [[ -z $dev_website_endpoint ]]; then
+  echo -e """
+  >>> DEV website endpoint: \033[31mNOT SET!\033[0m
+  """
+else
+  echo -e """
+  >>> DEV website endpoint: \033[32m${dev_website_endpoint}\033[0m
+  """
+fi
+
+if [[ -z $prod_website_endpoint ]]; then
+  echo -e """
+  >>> PROD website endpoint: \033[31mNOT SET!\033[0m
+  """
+else
+  echo -e """
+  >>> PROD website endpoint: \033[32m${prod_website_endpoint}\033[0m
+  """
+fi

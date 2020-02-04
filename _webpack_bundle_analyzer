@@ -1,0 +1,16 @@
+#! /bin/bash
+
+clear
+
+# Building client will output stats*.json file to be analyzed
+./_build_client
+
+echo -e """
+\033[32m
+===============================
+RUNNING WEBPACK-BUNDLE-ANALYZER
+===============================
+\033[0m
+"""
+
+./node_modules/.bin/webpack-bundle-analyzer ./dist/stats*.json

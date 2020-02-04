@@ -4,11 +4,8 @@ const ses = new SES();
 
 /**
  * Email function
- * @param  {any} event
- * @param  {AWSLambda.Callback} callback
  */
-export const emailer = async function(event: any, callback: AWSLambda.Callback) {
-  //
+export const emailer = async (event: any, callback: AWSLambda.Callback) => {
   //
   // Define params
   const body = JSON.parse(event.body);
@@ -21,7 +18,7 @@ export const emailer = async function(event: any, callback: AWSLambda.Callback) 
   //
   // Call ses-email api
   return new Promise((resolve, reject) => {
-    sendEmail(body, function(err, data) {
+    sendEmail(body, (err, data) => {
       if (!!err) {
         callback(err, { ...response, statusCode: 500, body: '{"result": "Server Error."}' });
         reject();
@@ -31,8 +28,6 @@ export const emailer = async function(event: any, callback: AWSLambda.Callback) 
     });
   });
 };
-//
-//
 //
 function sendEmail(
   data: {
@@ -44,6 +39,8 @@ function sendEmail(
 ) {
   const params = {
     Destination: {
+      // Note: see here to send to non-verified addresses
+      // https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html
       ToAddresses: [process.env.STATIC_RECEIVER_EMAIL]
     },
     Source: process.env.STATIC_SENDER_EMAIL,

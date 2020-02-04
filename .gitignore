@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/dist-*
 /dist-client
 /tmp
 /out-tsc
@@ -55,3 +56,7 @@ node_modules
 **/terraform.tfstate.backup
 **/.terraform.tfstate.lock.info
 temp*
+
+# Angular stuff
+src/client/environments/environment*.ts
+.test_report.txt

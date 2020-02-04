@@ -20,9 +20,9 @@ if [[ $decision != 'yes' ]]; then
 fi
 
 # First empty buckets
-# source .env
-# aws s3 rm s3://${TF_VAR_dev_bucket_name} --recursive
-# aws s3 rm s3://${TF_VAR_prod_bucket_name} --recursive
+source .env
+aws s3 rm s3://${TF_VAR_dev_bucket_name} --recursive
+aws s3 rm s3://${TF_VAR_prod_bucket_name} --recursive
 
 # For some reason, need to specify region in env var or get weird error
 # From: https://github.com/terraform-providers/terraform-provider-aws/issues/9989#issuecomment-558389160
