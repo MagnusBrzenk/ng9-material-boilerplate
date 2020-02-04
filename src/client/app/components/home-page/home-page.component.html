@@ -2,6 +2,20 @@
 
 <div>
   {{ settings }}
-  <button (click)="onSubmitLight()">Light</button>
-  <button (click)="onSubmitDark()">Dark</button>
+  <button mat-raised-button color="primary" (click)="onSubmitTheme('DARK-THEME')">Dark</button>
+  <button mat-raised-button color="accent" (click)="onSubmitTheme('LIGHT-THEME')">Light</button>
+  <button mat-raised-button color="warning" (click)="onSubmitTheme('FLATLY-THEME')">
+    Flatly
+  </button>
+  <button mat-raised-button color="background" (click)="onSubmitTheme('DARKLY-THEME')">
+    Darkly
+  </button>
+
+  <div class="denied" style="width: 100; height:100; border: red 1px solid;" color="success">
+    XXX
+  </div>
+  <button mat-button style="width: 100; height:100; border: red 1px solid;" color="success">
+    YYY
+  </button>
+  <mat-error>XXX</mat-error>
 </div>

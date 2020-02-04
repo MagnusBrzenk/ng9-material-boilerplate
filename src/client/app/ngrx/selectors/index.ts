@@ -1,6 +1,7 @@
 import { createSelector } from '@ngrx/store';
 import { AppState } from '../reducers';
 import { ITestUserSubstate } from '../reducers/test-user/test-user.reducer';
+import { ISiteSettingsSubstate } from '../reducers/site-settings/site-settings.reducer';
 
 /**
  *
@@ -18,4 +19,9 @@ export const selectTestUserList = createSelector(
 export const selectTestUserEveryOtherList = createSelector(
   (state: AppState) => state.testUserSubstate,
   (substate: ITestUserSubstate) => substate.testUsers.filter((el, ind) => ind % 2 !== 0)
+);
+
+export const selectSiteTheme = createSelector(
+  (state: AppState) => state.siteSettingsSubstate,
+  (substate: ISiteSettingsSubstate) => substate.siteTheme
 );

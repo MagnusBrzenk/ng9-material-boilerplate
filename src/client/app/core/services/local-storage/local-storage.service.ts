@@ -11,7 +11,7 @@ type LSKey = keyof ILocalStorageState; // Define type for 'LocalStorageKeys'
 export class LocalStorageService {
   //
   readonly defaultPermittedLocalStorageState: ILocalStorageState = {
-    siteTheme: 'DARK-THEME',
+    siteTheme: 'DEFAULT-THEME',
     isPageAnimated: true,
     testKey: 'foo'
   };

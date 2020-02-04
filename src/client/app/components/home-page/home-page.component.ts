@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppState } from '../../ngrx/reducers';
 import { Store } from '@ngrx/store';
 import { SetSiteTheme } from '../../ngrx/actions/site-settings.actions';
+import { TPermittedTheme } from '../../models/site-settings.model';
 
 @Component({
   selector: 'app-home-page',
@@ -22,10 +23,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSubmitLight() {
-    this.store.dispatch(new SetSiteTheme('LIGHT-THEME'));
-  }
-  onSubmitDark() {
-    this.store.dispatch(new SetSiteTheme('DARK-THEME'));
+  onSubmitTheme(input: TPermittedTheme) {
+    this.store.dispatch(new SetSiteTheme(input));
   }
 }

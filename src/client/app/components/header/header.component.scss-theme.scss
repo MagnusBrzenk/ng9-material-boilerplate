@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+
+@mixin app-header-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $base-background-color: mat-color($primary, darker);
+
+  app-header {
+    mat-toolbar {
+      // background: mat-color($primary, lighter);
+      // background-color: mat-color($primary);
+      background-color: red;
+
+      button {
+        &.active {
+          // color: mat-color($accent, default-contrast);
+          // background-color: mat-color($accent);
+          background-color: red;
+        }
+      }
+
+      .link {
+        color: mat-color($primary, default-contrast);
+      }
+    }
+  }
+}

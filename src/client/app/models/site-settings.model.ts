@@ -11,7 +11,10 @@ function stringLiteralArray<T extends string>(s: T[]) {
 
 export const permittedThemes = stringLiteralArray([
   //
+  'DEFAULT-THEME',
   'DARK-THEME',
-  'LIGHT-THEME'
+  'LIGHT-THEME',
+  'FLATLY-THEME',
+  'DARKLY-THEME'
 ]);
 export type TPermittedTheme = typeof permittedThemes[number];

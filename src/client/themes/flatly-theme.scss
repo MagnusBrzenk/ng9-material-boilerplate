@@ -1,0 +1,81 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+/**
+ * This 'collection' was created by taking the color for the
+ * [flatly](https://bootswatch.com/flatly/) theme (=#2C3E50),
+ * plugging it into [here](http://mcg.mbitson.com), and copying
+ * from `View Code > Angular JS 2`
+ */
+$flatly-primary-collection: (
+  50: #e6e8ea,
+  100: #c0c5cb,
+  200: #969fa8,
+  300: #6b7885,
+  400: #4c5b6a,
+  500: #2c3e50,
+  600: #273849,
+  700: #213040,
+  800: #1b2837,
+  900: #101b27,
+  A100: #68abff,
+  A200: #358fff,
+  A400: #0272ff,
+  A700: #0067e7,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff
+  )
+);
+
+$flatly-accent-collection: (
+  50: #f2f4f4,
+  100: #dfe4e4,
+  200: #cad2d3,
+  300: #b5c0c1,
+  400: #a5b3b3,
+  500: #95a5a6,
+  600: #8d9d9e,
+  700: #829395,
+  800: #788a8b,
+  900: #67797b,
+  A100: #f3fdfe,
+  A200: #c2f7fc,
+  A400: #8cf4ff,
+  A700: #73f2ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+// Convert collections into 'palettes'
+$flatly-primary-palette: mat-palette($flatly-primary-collection);
+$flatly-accent-palette: mat-palette($flatly-accent-collection);
+
+// Create 'theme' from palettes
+$app-flatly-theme: mat-light-theme($flatly-primary-palette, $flatly-accent-palette);

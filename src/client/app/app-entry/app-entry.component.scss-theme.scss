@@ -1,0 +1,75 @@
+@import '~@angular/material/theming';
+
+@mixin app-entry-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $base-background-color: mat-color($primary, darker);
+
+  mat-sidenav-container {
+    mat-toolbar {
+      background: mat-color($primary, lighter);
+
+      button {
+        &.active {
+          color: mat-color($accent, default-contrast);
+          background-color: mat-color($accent);
+        }
+      }
+
+      .link {
+        color: mat-color($primary, default-contrast);
+      }
+    }
+
+    .main-mat-toolbar {
+      background-color: rgba(mat-color($accent, darker), 0.5);
+    }
+
+    mat-sidenav {
+      .mat-list-item {
+        &.active {
+          color: mat-color($accent, default-contrast);
+          background-color: mat-color($accent) !important;
+
+          &:hover {
+            background-color: mat-color($accent, darker) !important;
+          }
+        }
+      }
+    }
+
+    mat-sidenav-content {
+      main {
+        //
+      }
+
+      .footer-wrapper {
+        .footer-animator {
+          background-color: rgba(mat-color($accent, darker), 0.5);
+          // color: mat-color($primary, lighter);
+        }
+      }
+    }
+  }
+
+  .error-notification-overlay {
+    color: mat-color($warn, default-contrast);
+    background-color: mat-color($warn);
+  }
+
+  .info-notification-overlay {
+    color: mat-color($accent, default-contrast);
+    background-color: mat-color($accent);
+  }
+
+  .success-notification-overlay {
+    color: mat-color($success-colors, default-contrast);
+    background-color: mat-color($success-colors);
+  }
+
+  .warning-notification-overlay {
+    color: mat-color($warning-colors, default-contrast);
+    background-color: mat-color($warning-colors);
+  }
+}

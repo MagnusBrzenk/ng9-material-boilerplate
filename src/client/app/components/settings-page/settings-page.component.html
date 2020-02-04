@@ -1,1 +1,27 @@
-<p>settings-page works!</p>
+<div class="container">
+  <h1>SETTINGS</h1>
+  <div class="row">
+    <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
+      <h2>
+        {{ 'THEMES' }}
+      </h2>
+      <div class="icon-form-field">
+        <mat-icon color="accent">
+          <fa-icon icon="paint-brush" color="accent"></fa-icon>
+        </mat-icon>
+        <mat-form-field>
+          <mat-select
+            [placeholder]="selectedSiteTheme"
+            (selectionChange)="onThemeSelect($event)"
+            name="themes"
+          >
+            <mat-option *ngFor="let t of permittedThemes" [value]="t">
+              {{ t.replace('-', ' ') }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="row"></div>
+</div>

@@ -1,0 +1,72 @@
+@import 'styles-variables';
+
+@import '../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+@import 'styles-reset';
+
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+@import 'themes/default-theme.scss';
+@import 'themes/light-theme.scss';
+@import 'themes/black-theme.scss';
+@import 'themes/nature-theme.scss';
+@import 'themes/candy-theme.scss';
+
+// Do some scss reset jazz
+@import 'styles-reset.scss-theme';
+@import '../node_modules/normalize-scss/sass/_normalize.scss';
+
+// @import './js9-styles/js9-allinone.scss';
+
+// Import custom-component themes
+@import 'app/app.component.scss-theme';
+@import 'app/navigation/header/header.component.scss-theme.scss';
+@import 'app/background-graphic/background-graphic.component.scss-theme.scss';
+@import 'app/static-pages/contact/contact.component.scss-theme.scss';
+@import 'app/dynamic-pages/neat-search-view/neat-search-view.component.scss-theme.scss';
+
+// Implement custom component themes
+@mixin custom-components-theme($theme) {
+  @include app-component-theme($theme);
+  @include app-header-component-theme($theme);
+  @include app-background-graphic-component-theme($theme);
+  @include app-contact-component-theme($theme);
+  @include app-neat-search-view-component-theme($theme);
+}
+
+.default-theme {
+  @include angular-material-theme($app-theme);
+  @include custom-components-theme($app-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($app-light-theme);
+  @include custom-components-theme($app-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($app-black-theme);
+  @include custom-components-theme($app-black-theme);
+}
+
+.nature-theme {
+  @include angular-material-theme($app-nature-theme);
+  @include custom-components-theme($app-nature-theme);
+}
+
+.candy-theme {
+  @include angular-material-theme($app-candy-theme);
+  @include custom-components-theme($app-candy-theme);
+}
+
+// Need to set router-controlled components globally due to view encapsulation
+main {
+  > *:not(router-outlet) {
+    flex: 1; // child will set to an equal size inside the container
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+}

@@ -1,18 +1,20 @@
-<mat-sidenav-container>
-  <mat-sidenav mode="push" #sidenav>
-    <app-side-nav></app-side-nav>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="header-wrapper">
-      <app-header (openSidenav)="sidenav.open()"></app-header>
-    </div>
+<div [class]="'theme-wrapper ' + siteTheme.toLowerCase()">
+  <mat-sidenav-container>
+    <mat-sidenav mode="push" #sidenav>
+      <app-side-nav></app-side-nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="header-wrapper">
+        <app-header (openSidenav)="sidenav.open()"></app-header>
+      </div>
 
-    <div class="routed-page-wrapper">
-      <router-outlet></router-outlet>
-    </div>
+      <div class="routed-page-wrapper">
+        <router-outlet></router-outlet>
+      </div>
 
-    <div class="footer-wrapper">
-      <app-footer></app-footer>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+      <div class="footer-wrapper">
+        <app-footer></app-footer>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

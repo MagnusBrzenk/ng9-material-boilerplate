@@ -1,5 +1,11 @@
+@import 'styles-variables';
+
+/* ADD BOOTSTRAP */
+
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+
+/* SOME GENERAL RESET JAZZ */
 
 html,
 body {
@@ -9,4 +15,69 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+@import 'styles-reset';
+
+/* THEMING */
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Do some theme-specific scss-reset jazz
+@import 'styles-reset.scss-theme';
+@import '~normalize-scss/sass/_normalize.scss';
+
+// Import custom-component themes
+@import 'app/app-entry/app-entry.component.scss-theme';
+@import 'app/components/header/header.component.scss-theme.scss';
+
+// Implement custom component themes
+@mixin custom-components-theme($theme) {
+  @include app-entry-component-theme($theme);
+  @include app-header-component-theme($theme);
+}
+
+// Build individual themes
+@import 'themes/dark-theme.scss'; // $app-dark-theme
+@import 'themes/light-theme.scss'; // $app-light-theme
+@import 'themes/flatly-theme.scss'; // $app-flatly-theme
+@import 'themes/darkly-theme.scss'; // $app-darkly-theme
+
+// Dark is default theme
+.default-theme {
+  @include angular-material-theme($app-dark-theme);
+  @include custom-components-theme($app-dark-theme);
+}
+
+// Light is default iff OS set to prefer it
+@media (prefers-color-scheme: light) {
+  .default-theme {
+    @include angular-material-theme($app-light-theme);
+    @include custom-components-theme($app-light-theme);
+  }
+}
+
+.dark-theme {
+  @include angular-material-theme($app-dark-theme);
+  @include custom-components-theme($app-dark-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($app-light-theme);
+  @include custom-components-theme($app-light-theme);
+}
+
+.flatly-theme {
+  @include angular-material-theme($app-flatly-theme);
+  @include custom-components-theme($app-flatly-theme);
+}
+
+.darkly-theme {
+  @include angular-material-theme($app-darkly-theme);
+  @include custom-components-theme($app-darkly-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+  $app-default-theme: $app-dark-theme;
 }
