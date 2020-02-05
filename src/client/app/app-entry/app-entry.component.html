@@ -1,7 +1,7 @@
 <div [class]="'theme-wrapper ' + siteTheme.toLowerCase()">
   <mat-sidenav-container>
     <mat-sidenav mode="push" #sidenav>
-      <app-side-nav></app-side-nav>
+      <app-side-nav (closeSideNav)="sidenav.close()"></app-side-nav>
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="header-wrapper">

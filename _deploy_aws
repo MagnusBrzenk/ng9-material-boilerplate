@@ -81,7 +81,7 @@ fi
 aws s3 rm s3://${bucket_name} --recursive
 
 # Sync dist with bucket
-aws s3 sync ./dist-client/ s3://${bucket_name}/
+aws s3 sync ./dist/ s3://${bucket_name}/
 
 # Final printout
 ./_show_website_endpoints
